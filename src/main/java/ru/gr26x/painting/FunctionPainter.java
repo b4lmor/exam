@@ -38,20 +38,18 @@ public class FunctionPainter extends CartesianPainter implements Painter{
     }
 
     public void paintFunction(Graphics g) {
-        g.setColor(Color.GREEN); // Цвет линии функции
-        double step = 0.01; // Шаг для вычисления значений функции
+        g.setColor(Color.GREEN);
+        double step = 0.01;
         double xPrev = converter.getXMin();
-        double yPrev = function.evaluate(xPrev); // Предыдущее значение функции
+        double yPrev = function.evaluate(xPrev);
 
         for (double x = converter.getXMin(); x <= converter.getXMax(); x += step) {
             double y = function.evaluate(x);
             int xScreen = converter.xCrt2Scr(x);
             int yScreen = converter.yCrt2Scr(y);
 
-            // Рисуем линию от предыдущей точки к текущей
             g.drawLine(converter.xCrt2Scr(xPrev), converter.yCrt2Scr(yPrev), xScreen, yScreen);
 
-            // Обновляем предыдущие значения
             xPrev = x;
             yPrev = y;
         }

@@ -157,7 +157,7 @@ public class MainWindow extends JFrame {
     }
 
     private void functionTextChanged() {
-        // Можно добавить логику валидации функции, если необходимо
+        mainPanel.repaint();
     }
 
     private void updatePainter() {
