@@ -6,12 +6,12 @@ import ru.gr26x.math.StringFunction;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class FunctionPainter extends CartesianPainter implements Painter{
+public class FunctionPainter extends CartesianPainter implements Painter {
 
     private Function function = null;
 
     public FunctionPainter(double xMin, double xMax,
-                           double yMin, double yMax){
+                           double yMin, double yMax) {
         super(xMin, xMax, yMin, yMax);
     }
 
@@ -26,14 +26,14 @@ public class FunctionPainter extends CartesianPainter implements Painter{
     }
 
     public void setWidth(int width) {
-
+        converter.setWidth(width);
     }
 
-    public void setHeight(int height){
-
+    public void setHeight(int height) {
+        converter.setHeight(height);
     }
 
-    public void setFunction(StringFunction function){
+    public void setFunction(StringFunction function) {
         this.function = function;
     }
 
