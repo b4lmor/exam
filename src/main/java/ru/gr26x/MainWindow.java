@@ -27,8 +27,6 @@ public class MainWindow extends JFrame {
 
     private final FunctionPainter functionPainter = new FunctionPainter(-3.0, 3.0, -3.0, 3.0);
 
-    private final ExecutorService executorService = Executors.newSingleThreadExecutor();
-
     private StringFunction function = null;
 
     public MainWindow() {
@@ -40,10 +38,8 @@ public class MainWindow extends JFrame {
                 super.paint(g);
                 if (function != null) {
                     functionPainter.setFunction(function);
-                    executorService.submit(() -> {
-                        functionPainter.paint(g);
-                        functionPainter.paintFunction(g);
-                    });
+                    functionPainter.paint(g);
+                    functionPainter.paintFunction(g);
                 }
             }
         };
